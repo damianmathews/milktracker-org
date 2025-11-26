@@ -861,6 +861,10 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            nav.container {
+                position: relative;
+            }
+
             .logo {
                 white-space: nowrap;
                 font-size: 18px;
@@ -872,59 +876,39 @@
                 gap: 5px;
                 cursor: pointer;
                 padding: 10px;
-                z-index: 10000;
             }
 
             .hamburger span {
                 width: 24px;
                 height: 2px;
                 background: var(--primary-text);
-                transition: all 0.3s ease;
-            }
-
-            .hamburger.active span:nth-child(1) {
-                transform: rotate(45deg) translate(5px, 5px);
-            }
-
-            .hamburger.active span:nth-child(2) {
-                opacity: 0;
-            }
-
-            .hamburger.active span:nth-child(3) {
-                transform: rotate(-45deg) translate(5px, -5px);
             }
 
             .nav-links {
-                display: flex;
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: -20px;
+                right: -20px;
                 background: #ffffff;
                 flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                gap: 30px;
-                z-index: 9999;
-                transform: translateX(100%);
-                transition: transform 0.3s ease;
-                pointer-events: none;
+                padding: 20px;
+                gap: 20px;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+                border-radius: 0 0 12px 12px;
             }
 
             .nav-links.active {
-                transform: translateX(0);
-                pointer-events: auto;
+                display: flex;
             }
 
             .nav-links a {
-                font-size: 24px;
+                font-size: 18px;
                 font-weight: 500;
             }
 
             .status-badge {
-                font-size: 14px;
-                padding: 8px 20px;
+                align-self: flex-start;
             }
 
             .charts-grid {
